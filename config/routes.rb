@@ -13,4 +13,7 @@ Rails.application.routes.draw do
   resources :friendships
   get 'search_friends', to: 'users#search'
   post 'add_friend', to: 'users#add_friend'
+
+  # Redirect all unknown routes to root
+  get '*path' => redirect('/')
 end

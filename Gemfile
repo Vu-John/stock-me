@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Other
 gem 'devise'
+gem 'font-awesome-rails'
 gem 'twitter-bootstrap-rails'
 gem 'jquery-rails'
 gem 'devise-bootstrap-views'

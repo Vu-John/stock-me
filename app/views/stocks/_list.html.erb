@@ -3,7 +3,12 @@
     <tr>
       <th>Name</th>
       <th>Symbol</th>
-      <th>Current Price</th>
+      <th>
+        Current Price 
+        <%= link_to refresh_user_stocks_path, method: :post do %>
+          <i class="fa fa-refresh"></i>
+        <% end %>
+      </th>
       <% if @user.id == current_user.id %>
         <th>Actions</th>
       <% end %>
@@ -18,7 +23,7 @@
         <% if @user.id == current_user.id %>
           <td><%= link_to "Delete this stock", user_stock_path(user_stock), method: :delete,
                                                                               data: {confirm: "Are you sure?"}, 
-                                                                             class: "btn btn-xs btn-danger" %>
+                                                                            class: "btn btn-xs btn-danger" %>
           </td>
         <% end %>
       </tr>

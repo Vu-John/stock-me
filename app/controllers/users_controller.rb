@@ -36,4 +36,17 @@ class UsersController < ApplicationController
     end  
     redirect_to friends_path
   end
+
+  def refresh_stocks
+    @user = current_user
+    @user_stocks = current_user.stocks
+    if @user_stocks
+      @user_stocks.each do |stock|
+        looked_up_stock = StockQuote::Stock.quote(stock.ticker)
+        stock.update(last_price: looked_up_stock.latest_price)
+      end
+      flash[:success] = "Stock prices successfully updated"
+    end
+    redirect_to my_portfolio_path
+  end
 end

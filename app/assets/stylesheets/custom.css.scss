@@ -1,7 +1,10 @@
+footer {
+  margin: 20px 0 0 20px;
+}
 .no-padding {
     padding: 0 !important;
 }
-  
+
 .left-padding {
     padding-left: 15px !important;
 }
@@ -17,6 +20,9 @@
 }
 
 .welcome-container {
+    background-image: url(asset-path('stocks.jpg'));
+    background-size: cover;
+    color: white;
     margin-bottom: 15px;
     padding-top: 150px;
     text-align: center;
